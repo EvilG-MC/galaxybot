@@ -1,10 +1,10 @@
-import { GalaxyEvent, GalaxyHandler } from "#galaxy/builders";
-import { Galaxy } from "#galaxy/client";
-import { ClientEvents } from "discord.js";
+import { type GalaxyEvent, GalaxyHandler } from "#galaxy/builders";
+import type { Galaxy } from "#galaxy/client";
+import type { ClientEvents } from "discord.js";
 
 export default class Events extends GalaxyHandler {
-    public async load(client: Galaxy) {
-        const { table } = this;
+	public async load(client: Galaxy) {
+		const { table } = this;
 
 		client.removeAllListeners();
 
@@ -30,5 +30,5 @@ export default class Events extends GalaxyHandler {
 		);
 
 		return console.log(table.toString());
-    }
+	}
 }

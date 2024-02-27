@@ -1,6 +1,6 @@
-import { Awaitable } from "discord.js";
+import type { Awaitable } from "discord.js";
 import { AsciiTable3 } from "ascii-table3";
-import { Galaxy } from "#galaxy/client";
+import type { Galaxy } from "#galaxy/client";
 import { InvalidImport } from "#galaxy/errors";
 
 import { pathToFileURL } from "node:url";
@@ -9,8 +9,8 @@ import { resolve, join } from "node:path";
 
 export abstract class GalaxyHandler {
 	/**
- * The handler name.
- */
+	 * The handler name.
+	 */
 	readonly name: string = this.constructor.name;
 	/**
 	 * The handler ascii-table to send.
@@ -47,13 +47,13 @@ export abstract class GalaxyHandler {
 
 				if (file.isFile()) files.push(finalPath);
 				else if (file.isDirectory()) files.push(...(await this.loadFiles(finalPath)));
-			};
+			}
 
 			return files;
 		} catch (_error) {
 			return files;
 		}
-	};
+	}
 
 	/**
 	 *
@@ -73,4 +73,4 @@ export abstract class GalaxyHandler {
 	 * When the handler is loaded.
 	 */
 	abstract load(client: Galaxy): Awaitable<void>;
-};
+}

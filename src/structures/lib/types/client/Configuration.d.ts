@@ -1,5 +1,4 @@
-
 export interface GalaxyConfiguration {
-    token: string;
-    databaseURL: string;
+	token: string;
+	databaseURL: string;
 }

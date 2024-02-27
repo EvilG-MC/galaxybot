@@ -1,16 +1,16 @@
 import { GalaxyHandler } from "#galaxy/builders";
-import { Galaxy } from "#galaxy/client";
+import type { Galaxy } from "#galaxy/client";
 
 export class Handlers extends GalaxyHandler {
-    private client: Galaxy;
+	private client: Galaxy;
 
-    constructor(client: Galaxy) {
-        super();
-        this.client = client;
-    }
+	constructor(client: Galaxy) {
+		super();
+		this.client = client;
+	}
 
-    public async load(): Promise<void> {
-        const { client, table } = this;
+	public async load(): Promise<void> {
+		const { client, table } = this;
 
 		const files = await this.loadFiles("handlers");
 		if (!files.length) return client.logger.warn("Galaxy doesn't have any handler to load.");
@@ -33,5 +33,5 @@ export class Handlers extends GalaxyHandler {
 		client.logger.info(`Client > Loaded: ${files.length} handlers.`);
 
 		return;
-    }
+	}
 }
