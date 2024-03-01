@@ -16,7 +16,8 @@
       "#galaxy/errors": ["./src/structures/util/Errors.ts"],
       "#galaxy/client": ["./src/structures/client/Galaxy.ts"],
       "#galaxy/builders": ["./src/structures/lib/classes/index.ts"],
-      "#galaxy/utils/*": ["./src/structures/util/*"]
+      "#galaxy/listeners": ["./src/structures/util/listeners/index.ts"],
+      "#galaxy/utils/*": ["./src/structures/util/*"],
     }
   },
   "exclude": ["node_modules"],

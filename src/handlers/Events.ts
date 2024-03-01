@@ -1,5 +1,6 @@
 import { type GalaxyEvent, GalaxyHandler } from "#galaxy/builders";
 import type { Galaxy } from "#galaxy/client";
+
 import type { ClientEvents } from "discord.js";
 
 export default class Events extends GalaxyHandler {
@@ -13,7 +14,8 @@ export default class Events extends GalaxyHandler {
 
 		await Promise.all(
 			files.map(async (file) => {
-				const event: GalaxyEvent<keyof ClientEvents> = await this.import(file);
+				const GalaxyEvent = await this.import(file);
+				const event: GalaxyEvent<keyof ClientEvents> = new GalaxyEvent();
 
 				if (!event) return table.addRow("Missing", "Missing event.");
 				if (!event.data.name) return table.addRow("Missing", "Missing event name.");

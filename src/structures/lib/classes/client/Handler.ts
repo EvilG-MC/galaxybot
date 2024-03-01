@@ -69,7 +69,7 @@ export abstract class GalaxyHandler {
 
 	/**
 	 *
-	 * Galaxy will execute this method
+	 * Galaxy will execute this method.
 	 * When the handler is loaded.
 	 */
 	abstract load(client: Galaxy): Awaitable<void>;

@@ -5,6 +5,10 @@
   "main": "./dist/index.js",
   "type": "module",
   "scripts": {
+    "compile": "tsc",
+    "start": "node ./dist/index.js",
+    "clean": "node ./scripts/clean.js",
+    "test": "npm run clean && npm run start",
     "lint": "biome lint --apply ./src",
     "format": "biome check --apply ./src"
   },
@@ -26,6 +30,7 @@
     "#galaxy/errors": "./dist/structures/util/Errors.js",
     "#galaxy/client": "./dist/structures/client/Galaxy.js",
     "#galaxy/builders": "./dist/structures/lib/classes/index.js",
+    "#galaxy/listeners": "./dist/structures/util/listeners/index.js",
     "#galaxy/utils/*": "./dist/structures/util/*"
   }
 }

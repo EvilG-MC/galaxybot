@@ -1,7 +1,21 @@
 import { GalaxyEvent } from "#galaxy/builders";
+import { Events } from "discord.js";
 
-export default new GalaxyEvent({ name: "ready", once: true }, async (client) => {
-	if (!client.user) return;
+import type { Galaxy } from "#galaxy/client";
 
-	client.logger.info(`API > Logged in as: ${client.user.tag}`);
-});
+export default class ReadyEvent extends GalaxyEvent<Events.ClientReady> {
+	constructor() {
+		super({
+			name: Events.ClientReady,
+			once: true,
+		});
+	}
+
+	public override async run(client: Galaxy) {
+		if (!client.user) return;
+
+		client.logger.info(`API > Logged in as: ${client.user.tag}`);
+
+		await client.deployCommands();
+	}
+}

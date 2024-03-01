@@ -2,7 +2,7 @@ import { inspect } from "node:util";
 import chalk from "chalk";
 import { InvalidHexColor } from "./Errors.js";
 
-const customColor = "#5aaeff";
+const customColor = "#5AAEFF";
 
 type Colors = "red" | "green" | "yellow" | "blue" | "magenta" | "cyan" | "white" | "grey" | "black";
 

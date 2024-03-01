@@ -15,6 +15,4 @@ export interface EventData<K extends keyof ClientEvents> {
 export interface Events<K extends keyof ClientEvents> {
 	/** The event data. */
 	data: EventData<K>;
-	/** The event run function. */
-	run: EventRunFn<K>;
 }

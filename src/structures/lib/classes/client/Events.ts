@@ -1,12 +1,20 @@
-import type { EventData, EventRunFn, Events } from "#galaxy/types";
-import type { ClientEvents } from "discord.js";
+import type { EventData, Events } from "#galaxy/types";
+import type { Galaxy } from "#galaxy/client";
 
-export class GalaxyEvent<K extends keyof ClientEvents> implements Events<K> {
+import type { Awaitable, ClientEvents } from "discord.js";
+
+export abstract class GalaxyEvent<K extends keyof ClientEvents> implements Events<K> {
 	readonly data: EventData<K>;
-	readonly run: EventRunFn<K>;
 
-	constructor(data: EventData<K>, run: EventRunFn<K>) {
+	constructor(data: EventData<K>) {
 		this.data = data;
-		this.run = run;
 	}
+
+	/**
+	 *
+	 * The event run callback.
+	 * @param client
+	 * @param args
+	 */
+	public abstract run(client: Galaxy, ...args: ClientEvents[K]): Awaitable<any>;
 }
