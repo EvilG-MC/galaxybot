@@ -41,4 +41,4 @@ export interface CommandsWithSub {
 	subCommand: string;
 }
 
-type HandleOptions = (BaseOptions & { toGuild: false }) | (Partial<BaseOptions> & { toGuild: true });
+export type HandleOptions = (BaseOptions & { toGuild: false }) | (Partial<BaseOptions> & { toGuild: true });

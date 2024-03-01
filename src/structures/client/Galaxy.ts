@@ -62,6 +62,7 @@ export class Galaxy extends Client {
 
 		this.logger.warn("API > Attemping to refresh commands...");
 
+		// idk, i just wanna test it, so.
 		const commands = [...this.commands.interaction.values()];
 		const appArray = commands.filter(({ handle }) => !handle.toGuild).map(({ data }) => data);
 		const devArray = commands.filter(({ handle }) => handle.toGuild).map(({ data }) => data);

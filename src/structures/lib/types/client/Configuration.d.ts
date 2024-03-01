@@ -11,8 +11,8 @@ export interface GalaxyConfiguration {
 	databaseURL: string;
 	/** The bot developer guild(s). */
 	guildIds: string[];
-	/** The bot developer user id. */
-	developerId: string;
+	/** The bot developer user id(s). */
+	developerIds: string[];
 	/** The main bot embed colors. */
 	colors: GalaxyColors;
 }

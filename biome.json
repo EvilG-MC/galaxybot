@@ -34,7 +34,7 @@
 			".vscode",
 			"node_modules",
 			"dist",
-			"src/env.d.ts"
+			"env.d.ts"
 		]
 	},
 	"json": {
